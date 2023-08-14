@@ -14,14 +14,16 @@
 			<button type="submit" name="sendTask" class="btn btn-success">Добавить задачу</button>
 		</form>
 		<?php
-require_once 'C:\ospanel\domains\SPD121\config.php';
+			require_once '../../config.php';
            
             if ($_GET['error']=='empty_input'){
                 echo "вы не ввели задачу";
             }
              
 			echo '<ul>';
-			$query = $pdo->query('SELECT * FROM `tasks` WHERE `id_user`='.$_SESSION['user_id'].' ORDER BY `id` DESC');
+			$test = 'SELECT * FROM `tasks` WHERE `id_user`='.$_SESSION['user_id'].' ORDER BY `id` DESC';
+			echo $test;
+			$query = $pdo->query('SELECT * FROM `tasks` WHERE `user_id`='.$_SESSION['user_id'].' ORDER BY `id` DESC');
 			while($row = $query->fetch(PDO::FETCH_OBJ)) {
 				echo '<li><b>'.$row->task.'</b><a href="delete.php?id='.$row->id.'"><button>Удалить</button></a></li>';
 			}

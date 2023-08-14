@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\ospanel\domains\SPD121\config.php';
+require_once '../../config.php';
 $sqlrequest = $pdo->prepare("SELECT *  FROM `users` WHERE `username` = :username") ;
 $sqlrequest->execute(['username'=>$_POST ['username']]);
 if (!($sqlrequest->rowCount())){

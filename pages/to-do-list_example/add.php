@@ -9,7 +9,7 @@
         header("Location:/?error=empty_input");
     }
     else{
-        require_once 'C:\ospanel\domains\SPD121\config.php';
+        require_once '../../config.php';
       
     $request = $pdo->prepare('INSERT INTO tasks(task, id_user) VALUES (:task,:id_user);');
     $request->execute(['task'=>$task,

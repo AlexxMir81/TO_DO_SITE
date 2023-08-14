@@ -6,10 +6,10 @@
 // validation
 // создаем пользователя
 
-require_once 'C:\ospanel\domains\SPD121\config.php';
+require_once '../../config.php';
 
 function is_correct_file(){
-    $upload_dir = 'C:\ospanel\domains\SPD121\images\\';
+    $upload_dir = '../../images';
     #$_FILES['name_attribute from form']['name']
     $upload_filename = $upload_dir.basename($_FILES['avatar_img']['name']); // only filename - basename($_FILES['avatar_img']['name']) -> name.png
     //echo $_FILES['avatar_img']['name']."<br>".$_FILES['avatar_img']['type']."<br>";
