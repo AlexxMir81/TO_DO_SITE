@@ -1,4 +1,4 @@
 <?php
 require_once 'config.php';
 $_SESSION['user_id'] = null;
-header("Location:/");
+header("Location:/auth/login.php");
