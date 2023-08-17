@@ -6,11 +6,16 @@ if (!($sqlrequest->rowCount())){
     echo "username is not found ";
     die;
 }
-$user = $sqlrequest->fetch(PDO::FETCH_ASSOC);
+try{
+    $user = $sqlrequest->fetch(PDO::FETCH_ASSOC);
+}
+catch(PDOException $ex){
+    echo $ex->getMessage();
+}
 
 if (password_verify($_POST['password'], $user['password'])){
     $_SESSION['user_id']=$user['id'];
-    header('Location: ../../index.php');
+    header('Location: ../../../index.php');
     die;
 }
 echo 'password or username is not match';
